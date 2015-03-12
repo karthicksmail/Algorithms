@@ -25,7 +25,8 @@ public class LazyQuickUnion {
 		if (isConnected(first, second)) {
 			return;
 		} else {
-			grid[first] = grid[second];
+			int rootFirst = root(grid[first]);
+			grid[rootFirst] = root(grid[second]);
 		}
 		display();
 	}
