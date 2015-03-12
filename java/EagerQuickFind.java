@@ -12,7 +12,7 @@ public class EagerQuickFind {
 	}
 
 	public void union(int first, int second){
-		if (grid[first] == grid[second]) {
+		if (isConnected(first, second)) {
 			return;
 		} else {
 			int orig_sec = grid[second];
