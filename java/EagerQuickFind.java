@@ -15,9 +15,9 @@ public class EagerQuickFind {
 		if (isConnected(first, second)) {
 			return;
 		} else {
-			int orig_sec = grid[second];
+			int origSec = grid[second];
 			for (int i = 0; i < grid.length; i++) {
-				if (grid[i] == orig_sec) {
+				if (grid[i] == origSec) {
 					grid[i] = grid[first];
 				}
 			}
