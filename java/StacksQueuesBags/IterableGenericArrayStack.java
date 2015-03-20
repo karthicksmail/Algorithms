@@ -34,6 +34,19 @@ public class IterableGenericArrayStack<DataType> implements Iterable<DataType> {
 		return elem;
 	}
 
+	public void display() {
+		if (stack.length != 1) {
+			for (int i = 0; i < stack.length; i++) {
+				System.out.print(stack[i].toString());
+				if (top == i) { 
+					System.out.println("\t<-- top");
+				} else {
+					System.out.println();
+				}
+			}
+		}
+	}
+
 	public boolean isEmpty() {
 		return (top == 0);
 	}
