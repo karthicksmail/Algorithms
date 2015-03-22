@@ -3,7 +3,10 @@ public abstract class Sort{
 	protected int swapCount;
 	protected int compareCount;
 
-	protected Sort(Comparable[] array) {
+	protected void title() {
+	}
+
+	protected void initialize(Comparable[] array) {
 		this.array = array;
 		this.swapCount = 0;
 		this.compareCount = 0;
