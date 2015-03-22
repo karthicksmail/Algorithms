@@ -23,6 +23,7 @@ public class Main {
 
 		List<Sort> sortArray = 	new ArrayList<Sort>();
 		sortArray.add(new SelectionSort());
+		sortArray.add(new InsertionSort());
 
 		for (int s = 0; s < sortArray.size(); s++) {
 			sortArray.get(s).title();
