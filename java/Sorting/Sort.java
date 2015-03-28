@@ -13,10 +13,8 @@ public abstract class Sort{
 	}
 
 	protected void swap(int i, int j) {
-		//System.out.print("Swapping ");
-		//((Person)array[i]).display();
-		//System.out.print(" and ");
-		//((Person)array[j]).display();
+		//System.out.println("Swapping " + ((Person)array[i]).getAge() + " and " + ((Person)array[j]).getAge());
+		System.out.println("Swapping " + array[i] + " and " + array[j]);
 		Comparable temp = array[i];
 		array[i] = array[j];
 		array[j] = temp;

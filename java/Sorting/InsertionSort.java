@@ -5,24 +5,37 @@ public class InsertionSort extends Sort {
 	}
 
 	public void sort() {
-		for (int i = 0; i < array.length - 1; i++) {
-			int min = i;
-			for (int j = i + 1; j < array.length; j++) {
-				int retval = array[min].compareTo(array[j]);
-				compareCount++;
-				if (retval == 1) {
-					min = j;
-				}
-
-				//for (int k = 0; k < array.length; k++) {
-				//	((Person)array[k]).display();
-				//	if(min == k) {
-				//		System.out.println("\t\tmin above this");
-				//	}
-				//}
+		for (int i = 1; i < array.length; i++) {
+			Comparable val = (Comparable)array[i];
+			int j;
+			for (j = i - 1, compareCount++; j >= 0 && array[j].compareTo(val) == 1; j--, compareCount++) {
+				array[j + 1] = array[j];
+				swapCount++;
 			}
-			swap(i, min);
+			array[j + 1] = val;
 		}
 	}
+
+	public static void main(String[] args) {
+		Integer[] arrInt = {34, 1, 30, 7, 32, 35, 35};
+
+		System.out.println("Before Sorting");
+		for (int j = 0; j < arrInt.length; j++) {
+			System.out.println(arrInt[j]);
+		}
+		System.out.println("--------------------");
+
+		InsertionSort sort = new InsertionSort();
+		sort.initialize(arrInt);
+		sort.sort();
+
+		System.out.println("After Sorting");
+		for (int j = 0; j < arrInt.length; j++) {
+			System.out.println(arrInt[j]);
+		}
+		sort.displayMetrics();
+		System.out.println("*********************");
+	}
+
 }
 

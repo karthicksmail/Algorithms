@@ -7,6 +7,14 @@ public class Person implements Comparable<Person> {
 		this.age = age;
 	}
 
+	public int getAge() {
+		return age;
+	}
+
+	public String toString() {
+		return name + " " + age;
+	}
+
 	public int compareTo(Person that) {
 		if (this.age < that.age) {
 			return -1;
