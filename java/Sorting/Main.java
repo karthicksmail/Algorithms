@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -28,18 +29,19 @@ public class Main {
 		for (int s = 0; s < sortArray.size(); s++) {
 			sortArray.get(s).title();
 			for (int i = 0; i < allArrays.length; i++) {
+				Person[] currentArray = Arrays.copyOf(allArrays[i], allArrays[i].length);
 				System.out.println("Before Sorting");
-				for (int j = 0; j < allArrays[i].length; j++) {
-					allArrays[i][j].display();
+				for (int j = 0; j < currentArray.length; j++) {
+					currentArray[j].display();
 				}
 				System.out.println("--------------------");
 
-				sortArray.get(s).initialize(allArrays[i]);
+				sortArray.get(s).initialize(currentArray);
 				sortArray.get(s).sort();
 
 				System.out.println("After Sorting");
-				for (int j = 0; j < allArrays[i].length; j++) {
-					allArrays[i][j].display();
+				for (int j = 0; j < currentArray.length; j++) {
+					currentArray[j].display();
 				}
 				sortArray.get(s).displayMetrics();
 				System.out.println("*********************");
