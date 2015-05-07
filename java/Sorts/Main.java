@@ -25,27 +25,29 @@ public class Main {
 		List<Sort> sortArray = 	new ArrayList<Sort>();
 		sortArray.add(new SelectionSort());
 		sortArray.add(new InsertionSort());
+		sortArray.add(new ShellSort());
 
 		for (int s = 0; s < sortArray.size(); s++) {
 			sortArray.get(s).title();
 			for (int i = 0; i < allArrays.length; i++) {
 				Person[] currentArray = Arrays.copyOf(allArrays[i], allArrays[i].length);
-				System.out.println("Before Sorting");
-				for (int j = 0; j < currentArray.length; j++) {
-					currentArray[j].display();
-				}
-				System.out.println("--------------------");
+				//System.out.println("Before Sorting");
+				//for (int j = 0; j < currentArray.length; j++) {
+				//	currentArray[j].display();
+				//}
+				//System.out.println("--------------------");
 
 				sortArray.get(s).initialize(currentArray);
 				sortArray.get(s).sort();
 
-				System.out.println("After Sorting");
-				for (int j = 0; j < currentArray.length; j++) {
-					currentArray[j].display();
-				}
+				//System.out.println("After Sorting");
+				//for (int j = 0; j < currentArray.length; j++) {
+				//	currentArray[j].display();
+				//}
 				sortArray.get(s).displayMetrics();
 				System.out.println("*********************");
 			}
 		}
 	}
 }
+
